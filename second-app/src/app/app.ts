@@ -12,7 +12,8 @@ export class App implements OnInit, OnDestroy {
  
   ngOnInit(): void {
     window.addEventListener('remote1Event', (event) => {
-      
+      const customEvent = event as CustomEvent;
+      this.remote1Message = customEvent.detail?.['morningMessage'];
     })
   }
    ngOnDestroy(): void {
