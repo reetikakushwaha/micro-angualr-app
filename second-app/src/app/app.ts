@@ -11,7 +11,7 @@ export class App implements OnInit, OnDestroy {
   protected remote1Message!:string;
  
   ngOnInit(): void {
-    window.addEventListener('remote1Event', (event) => {
+    window.addEventListener('messageFromFirstApp', (event) => {
       const customEvent = event as CustomEvent;
       this.remote1Message = customEvent.detail?.['morningMessage'];
     })
